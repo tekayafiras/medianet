@@ -1,0 +1,275 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+:root{
+    --blue :#0CB3D7;
+    --black : #05060B; 
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Roboto', sans-serif;
+}
+.hamburger{
+    width: 25px;
+    height: 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+    right: 20px;
+    top: 32px;
+    z-index: 20;    /*20 z index*/
+}
+.hamburger:hover .line{
+    opacity: .5;
+}
+.line{
+    background: var(--blue);
+    height: 3px;
+    width: 100%;
+    transition: all .45s ease;
+}
+.line-3{
+    width: 50%;
+    align-self: flex-end;
+}
+.navbar{
+    display: flex;
+    background: transparent;
+    padding-right: 6rem;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+.nav{
+    display: flex;
+    transform: translateX(100px);
+}
+
+.nav li{
+    padding: 2rem .55rem;
+    cursor: pointer;
+    font-size: .95rem;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    transition: all .5s ease;
+}
+.nav li::before{
+    position: absolute;
+    content: '';
+    background: var(--blue);
+    bottom: 0;
+    left: 7px;
+    width: 33px;
+    height: 2.5px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all .4s ease;
+    border-radius: 4px;
+
+}
+.nav li:hover{
+    color: var(--blue);
+}
+.nav li:hover::before{
+    transform: scaleX(1);
+}
+.title h2{
+    color: #FBB431;
+    cursor: pointer;
+    letter-spacing: .1rem;
+}
+.title span{
+    color: var(--blue);
+}
+.second-nav{
+    position: relative;
+    max-width: 1120px;
+    margin: .5rem auto;
+    border-bottom: 2px dotted rgb(197, 197, 197);
+    
+    
+}
+.container-second{
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    background: white;
+    transition: all .25s ease-in;
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    transform: opacity .2s ease;
+    z-index: 2;
+    
+}
+.inside-hamb{
+    top: 20px;
+    
+}
+.inside-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 5rem;
+}
+.inside-hamb h1{
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+}
+.grid-item ul{
+    padding-top: 1rem;
+    line-height: 1.7rem;
+}
+.grid-item h3{
+    color: var(--blue);
+}
+.grid-item li{
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+.grid-item li:hover{
+    color: var(--blue);
+}
+/** classes fi js**/
+.zindex{
+    display: none;
+}
+.background-white{
+    background: white;
+    transition: all .7s ease-in-out;
+}
+.black{
+    color: var(--black);
+    transition: all .4s ;
+}
+.color-black{
+    background-color: var(--black);
+    transition: all .4s ease-in-out;
+}
+.color-black:hover{
+    background-color: rgba(0, 0, 0, 0.61);
+}
+.none{
+    display: none;
+}
+.rotate-1{
+    transform: rotate(130deg) translate(7px);
+}
+.rotate-3{
+    width: 100%;
+    transform: rotate(-130deg) translate(7px);  
+}
+.scale{
+    transform: none;
+    opacity: 1;
+}
+
+
+/**end of js classes*/
+
+.social{
+    display: flex;
+    flex: column;
+    justify-content: space-around;
+    color: rgb(119, 119, 119);
+}
+
+
+/*carousel*/
+
+.carousel{
+    background: #1B1C1E;
+    color: white;
+    position: relative;
+
+}
+.carousel h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.carousel .carousel-track{		/**** position relative bech na3mlou elli ta7tha elli hia carousel slide poition absolute*/
+    position: relative;
+    height: 100%;
+    transition: all .3s ease-in-out;
+    text-align: center;
+}
+.carousel-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50px;
+    width: 29px;
+    cursor: pointer;
+    position: relative;
+    top: 50vh;
+    left: 20px;
+    transform: translateY(-50%);
+    z-index: 1;
+    
+}
+.carousel-indicator{
+    background: rgb(204, 204, 204);
+    height: 1px;
+    width: 100%;
+    transition: all .5s ease;
+}
+.carousel-cont{
+    padding: .2rem 0;
+}
+.carousel-cont:hover .carousel-indicator{
+    background: var(--blue);
+    width: 150%;
+}
+.carousel-nav >*{
+    cursor: pointer;
+}
+
+.carousel-container{
+    position: relative;
+    margin: 3rem 0;
+    height: 80vh;
+    padding-top: 3rem;
+    overflow: hidden;
+}
+.carousel-slide p{
+    position: relative;
+    display: inline;
+    padding: .7rem 0;
+    top: 0px;
+}
+.carousel-slide p::before{
+    content: '';
+    background: linear-gradient(to right ,blue, red);
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    border-radius: 5px;
+    z-index: 0;
+}
+/* .carousel-slide{		
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    width: 100%;
+*/
